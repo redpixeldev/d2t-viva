@@ -1,6 +1,14 @@
+---
+interface Props {
+	image?: string;
+}
+
+const { image = '/img/bg-cta.jpg' } = Astro.props;
+---
+
 <div class="relative mb-5">
-	<img src="/img/bg-cta.jpg" class="object-cover w-full h-full inset-0 absolute object-[50%_40%]" alt="">
-	<div class="absolute inset-0 z-20 w-full h-full bg-linear-to-r from-brand-primary/60 md:from-brand-primary/80 lg:from-brand-primary from-100% md:from-50% lg:from-10%"></div>
+	<img src={image} class="object-cover w-full h-full inset-0 absolute object-[50%_40%]" alt="">
+	<div class="absolute inset-0 z-20 w-full h-full bg-linear-to-r from-brand-primary/70 md:from-brand-primary/80 lg:from-brand-primary from-100% md:from-50% lg:from-10%"></div>
 	<div class="max-w-7xl container lg:px-16 relative z-30 pt-9 pb-14">
 		<form class="sm:3/4 md:w-3/5 lg:w-1/2 xl:w-2/5 mx-auto relative">
 			<h2 class="text-white text-center font-bold text-2xl pb-2">Blijf je graag op de hoogte?</h2>

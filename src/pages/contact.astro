@@ -14,6 +14,57 @@ import Cta from '@components/Cta.astro';
 			<h1 class="uppercase text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center">CONTACTEER ONS</h1>
 		</div>
 	</div>
-	<Cta />
+	<div class="max-w-7xl container lg:px-16 py-9">
+		<div class="flex flex-col xl:flex-row gap-12 sm:gap-16">
+			<div class="xl:w-1/2 pt-3 sm:pt-10">
+				<div class="flex flex-col sm:flex-row gap-10 pb-11">
+					<div class="flex gap-5">
+						<div>
+							<span class="uppercase pb-2 block font-bold">Zwevezele</span>
+							<p class="text-sm pb-3">Oostendestraat 35 <br/> 8600 Diksmuide</p>
+							<a href="mailto:info@viva.eu" class="text-sm block btn hover:text-brand-yellow">info@viva.eu</a>
+							<a href="tel:051500067" class="text-sm block  btn hover:text-brand-yellow">051 50 00 67</a>
+						</div>
+						<div>
+							<img src="/img/icon-map.png" class="h-auto" alt="">
+						</div>
+					</div>
+					<div class="flex gap-5">
+						<div>
+							<span class="uppercase pb-2 block font-bold">Zwevezele</span>
+							<p class="text-sm pb-3">Oostendestraat 35 <br/> 8600 Diksmuide</p>
+							<a href="mailto:info@viva.eu" class="text-sm block btn hover:text-brand-yellow">info@viva.eu</a>
+							<a href="tel:051500067" class="text-sm block  btn hover:text-brand-yellow">051 50 00 67</a>
+						</div>
+						<div>
+							<img src="/img/icon-map.png" class="h-auto" alt="">
+						</div>
+					</div>
+				</div>
+				<form>
+					<div class="flex flex-col sm:flex-row gap-6 sm:gap-10 pb-6 sm:pb-10">
+						<input type="text" placeholder="Naam*" class="border-0 border-b border-black py-1.5 placeholder-black px-0 sm:w-1/2 text-black">
+						<input type="text" placeholder="Voornaam*" class="border-0 border-b border-black py-1.5 placeholder-black px-0 sm:w-1/2 text-black">
+					</div>
+					<div class="flex flex-col sm:flex-row gap-6 sm:gap-10 pb-6 sm:pb-10">
+						<input type="email" placeholder="E-mail*" class="border-0 border-b border-black py-1.5 placeholder-black px-0 sm:w-1/2 text-black">
+						<input type="tel" placeholder="Telefoonnummer*" class="border-0 border-b border-black py-1.5 placeholder-black px-0 sm:w-1/2 text-black">
+					</div>
+					<textarea name="message" id="message" rows="5" placeholder="Bericht*" class="border-0 border-b border-black py-1.5 placeholder-black px-0 w-full text-black"></textarea>
+					<div class="flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-8 pt-3">
+						<div class="flex items-center sm:mb-4">
+								<input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 border border-default-medium bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft">
+								<label for="default-checkbox" class="select-none ms-2 text-sm">Ik ga akkoord met de privacy policy.</label>
+						</div>
+						<button class="font-bold hover:text-brand-yellow btn">VERZENDEN</button>
+					</div>
+				</form>
+			</div>
+			<div class="xl:w-1/2">
+				<img src="/img/map.jpg" class=" object-cover h-full md:h-140 xl:h-full w-full" alt="">
+			</div>
+		</div>
+	</div>
+	<Cta image="/img/bg-cta-contact.jpg" />
 	<Footer />
 </Layout>
