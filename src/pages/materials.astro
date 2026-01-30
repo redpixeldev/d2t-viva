@@ -1,0 +1,88 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import Cta from '@components/Cta.astro';
+
+const materials = [
+	{
+		href: '/',
+		image: '/img/shell-construction.webp',
+		title: 'Ruwbouw',
+		description: 'Korte beschrijving of tekst over de dienst.',
+	},
+	{
+		href: '/',
+		image: '/img/roofing.webp',
+		title: 'Dakbedekking',
+		description: 'Korte beschrijving of tekst over de dienst.',
+	},
+	{
+		href: '/',
+		image: '/img/interior-finishing.png',
+		title: 'Binnenafwerking',
+		description: 'Korte beschrijving of tekst over de dienst.',
+	},
+	{
+		href: '/',
+		image: '/img/facade-cladding.webp',
+		title: 'Gevelbekleding',
+		description: 'Korte beschrijving of tekst over de dienst.',
+	},
+	{
+		href: '/',
+		image: '/img/kepers.webp',
+		title: 'Hout',
+		description: 'Korte beschrijving of tekst over de dienst.',
+	},
+	{
+		href: '/',
+		image: '/img/floors-and-tiles.webp',
+		title: 'Vloeren en tegels',
+		description: 'Korte beschrijving of tekst over de dienst.',
+	},
+	{
+		href: '/',
+		image: '/img/garden.webp',
+		title: 'Tuin',
+		description: 'Korte beschrijving of tekst over de dienst.',
+	},
+];
+---
+
+<Layout title='Astro'>
+	<Header />
+	<div class="relative">
+		<img src="/img/bg-hero-materials.jpg" class="w-full sm:w-3/5 absolute left-0 object-cover inset-y-0 max-h-52 object-[50%_50%]" alt="">
+		<div class="bg-linear-to-l from-brand-primary/70 sm:from-brand-primary from-100% sm:from-40% h-full w-full absolute inset-0 w-full h-full z-20"></div>
+		<div class="max-w-7xl container lg:px-16 min-h-52 flex items-center relative z-20">
+			<div class="w-full sm:w-2/5 lg:w-1/3 sm:ml-auto">
+				<h1 class="uppercase text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center">BOUWMATERIALEN</h1>
+			</div>
+		</div>
+	</div>
+	<div class="py-5 max-w-7xl mx-auto">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+			{materials.map((item) => (
+				<a href={item.href} class="relative min-h-80 xl:min-h-100 flex items-end group">
+					<img src={item.image} class="absolute inset-0 w-full h-full object-cover" alt="">
+					<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
+					<div class="relative z-20 w-full">
+						<div class="flex items-center gap-6 xl:gap-10 justify-between p-5">
+							<div class="text-white">
+								<h2 class="text-xl/[24px] xl:text-2xl font-bold group-hover:text-brand-yellow btn">{item.title}</h2>
+								<p class="text-sm">{item.description}</p>
+							</div>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 text-white group-hover:text-brand-yellow btn">
+								<path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+							</svg>
+						</div>
+					</div>
+				</a>
+			))}
+		</div>
+	</div>
+
+	<Cta />
+	<Footer />
+</Layout>
