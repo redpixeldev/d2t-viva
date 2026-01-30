@@ -47,7 +47,23 @@ const materials = [
 		title: 'Tuin',
 		description: 'Korte beschrijving of tekst over de dienst.',
 	},
+	{
+		href: '/',
+		image: '/img/garden.webp',
+		title: 'Tuin',
+		description: 'Korte beschrijving of tekst over de dienst.',
+	},
+		{
+		href: '/',
+		image: '/img/garden.webp',
+		title: 'Tuin',
+		description: 'Korte beschrijving of tekst over de dienst.',
+	},
 ];
+
+// Calculate CTA column span based on remaining space in the last row
+const remainder = materials.length % 3;
+const ctaColSpan = remainder === 0 ? 3 : 3 - remainder;
 ---
 
 <Layout title='Astro'>
@@ -62,7 +78,7 @@ const materials = [
 		</div>
 	</div>
 	<div class="py-5 max-w-7xl mx-auto">
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 			{materials.map((item) => (
 				<a href={item.href} class="relative min-h-80 xl:min-h-100 flex items-end group">
 					<img src={item.image} class="absolute inset-0 w-full h-full object-cover" alt="">
@@ -80,6 +96,24 @@ const materials = [
 					</div>
 				</a>
 			))}
+			<a
+				href="/"
+				class:list={[
+					'relative min-h-80 xl:min-h-100 flex items-end group bg-brand-primary',
+					{
+						'lg:col-span-1': ctaColSpan === 1,
+						'lg:col-span-2': ctaColSpan === 2,
+						'lg:col-span-3': ctaColSpan === 3,
+					},
+				]}
+			>
+				<div class="relative z-20 w-full">
+					<div class="text-white p-5">
+						<h2 class="text-xl/[24px] xl:text-2xl font-bold group-hover:text-brand-yellow btn">Hulp nodig bij uw keuze?</h2>
+						<p class="text-sm">Wij helpen u graag verder!</p>
+					</div>
+				</div>
+			</a>
 		</div>
 	</div>
 
