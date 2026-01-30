@@ -49,21 +49,19 @@ const materials = [
 	},
 	{
 		href: '/',
-		image: '/img/garden.webp',
-		title: 'Tuin',
-		description: 'Korte beschrijving of tekst over de dienst.',
-	},
-		{
-		href: '/',
-		image: '/img/garden.webp',
-		title: 'Tuin',
+		image: '/img/floors-and-tiles.webp',
+		title: 'Vloeren en tegels',
 		description: 'Korte beschrijving of tekst over de dienst.',
 	},
 ];
 
 // Calculate CTA column span based on remaining space in the last row
-const remainder = materials.length % 3;
-const ctaColSpan = remainder === 0 ? 3 : 3 - remainder;
+// For lg (3 columns)
+const lgRemainder = materials.length % 3;
+const lgCtaColSpan = lgRemainder === 0 ? 3 : 3 - lgRemainder;
+// For sm (2 columns)
+const smRemainder = materials.length % 2;
+const smCtaColSpan = smRemainder === 0 ? 2 : 1;
 ---
 
 <Layout title='Astro'>
@@ -101,9 +99,10 @@ const ctaColSpan = remainder === 0 ? 3 : 3 - remainder;
 				class:list={[
 					'relative min-h-80 xl:min-h-100 flex items-end group bg-brand-primary',
 					{
-						'lg:col-span-1': ctaColSpan === 1,
-						'lg:col-span-2': ctaColSpan === 2,
-						'lg:col-span-3': ctaColSpan === 3,
+						'sm:col-span-2': smCtaColSpan === 2,
+						'lg:col-span-1': lgCtaColSpan === 1,
+						'lg:col-span-2': lgCtaColSpan === 2,
+						'col-span-full': lgCtaColSpan === 3 && smCtaColSpan === 2,
 					},
 				]}
 			>
