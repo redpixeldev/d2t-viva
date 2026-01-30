@@ -145,36 +145,81 @@ import Cta from '@components/Cta.astro';
 			</div>
 		</div>
 	</div>
-	<div class="max-w-7xl mx-auto py-14">
+	<div
+		class="max-w-7xl mx-auto py-14"
+		x-data="{
+			scroll: 0,
+			maxScroll: 0,
+			init() {
+				this.updateMaxScroll();
+				window.addEventListener('resize', () => this.updateMaxScroll());
+			},
+			updateMaxScroll() {
+				const container = this.$refs.slider;
+				this.maxScroll = container.scrollWidth - container.clientWidth;
+			},
+			scrollLeft() {
+				const container = this.$refs.slider;
+				const cardWidth = container.querySelector('a').offsetWidth + 32;
+				container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+			},
+			scrollRight() {
+				const container = this.$refs.slider;
+				const cardWidth = container.querySelector('a').offsetWidth + 32;
+				container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+			},
+			updateScroll() {
+				this.scroll = this.$refs.slider.scrollLeft;
+			},
+			get progress() {
+				if (this.maxScroll === 0) return 0;
+				return (this.scroll / this.maxScroll) * 100;
+			}
+		}"
+	>
 		<div class="container text-center">
 			<h2 class="font-semibold text-2xl text-brand-primary pb-12">Referenties</h2>
 		</div>
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group">
+		<div
+			x-ref="slider"
+			@scroll="updateScroll"
+			class="overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-hide px-4 lg:px-0"
+		>
+			<a href="/" class="relative min-h-80 xl:min-h-100 group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] mr-8 whitespace-normal">
 				<img src="/img/references-1.jpg" class="absolute inset-0 w-full h-full object-cover" alt="">
 				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
-				<div class="relative z-20 w-full">
-					<div class="p-5 text-white">
+				<div class="relative z-20 w-full min-h-80 xl:min-h-100 flex items-end">
+					<div class="p-5 text-white w-full">
 						<h2 class="text-xl/[24px] xl:text-2xl font-bold group-hover:text-brand-yellow btn">K in Kortrijk </h2>
 						<p class="text-sm">Korte beschrijving over de dienst ter plaatse.</p>
 					</div>
 				</div>
 			</a>
-			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group">
+			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] mr-8 whitespace-normal">
 				<img src="/img/references-2.jpg" class="absolute inset-0 w-full h-full object-cover" alt="">
 				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
-				<div class="relative z-20 w-full">
-					<div class="p-5 text-white">
+				<div class="relative z-20 w-full min-h-80 xl:min-h-100 flex items-end">
+					<div class="p-5 text-white w-full">
 						<h2 class="text-xl/[24px] xl:text-2xl font-bold group-hover:text-brand-yellow btn">Caendel, Deinze</h2>
 						<p class="text-sm">Korte beschrijving over de dienst ter plaatse.</p>
 					</div>
 				</div>
 			</a>
-			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group">
+			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] mr-8 whitespace-normal">
 				<img src="/img/references-3.jpg" class="absolute inset-0 w-full h-full object-cover" alt="">
 				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
-				<div class="relative z-20 w-full">
-					<div class="p-5 text-white">
+				<div class="relative z-20 w-full min-h-80 xl:min-h-100 flex items-end">
+					<div class="p-5 text-white w-full">
+						<h2 class="text-xl/[24px] xl:text-2xl font-bold group-hover:text-brand-yellow btn">Plopsaqua, Hannut-Landen</h2>
+						<p class="text-sm">Korte beschrijving over de dienst ter plaatse.</p>
+					</div>
+				</div>
+			</a>
+			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] whitespace-normal">
+				<img src="/img/references-3.jpg" class="absolute inset-0 w-full h-full object-cover" alt="">
+				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
+				<div class="relative z-20 w-full min-h-80 xl:min-h-100 flex items-end">
+					<div class="p-5 text-white w-full">
 						<h2 class="text-xl/[24px] xl:text-2xl font-bold group-hover:text-brand-yellow btn">Plopsaqua, Hannut-Landen</h2>
 						<p class="text-sm">Korte beschrijving over de dienst ter plaatse.</p>
 					</div>
@@ -183,23 +228,26 @@ import Cta from '@components/Cta.astro';
 		</div>
 		<div class="pt-8">
 			<div class="relative w-[66%] ml-auto h-[2px] bg-brand-primary/30">
-				<div class="absolute left-0 inset-y-0 w-32 bg-brand-primary"></div>
+				<div
+					class="absolute left-0 inset-y-0 bg-brand-primary transition-all duration-300"
+					:style="'width: ' + Math.max(32, (progress / 100) * 100) + '%'"
+				></div>
 			</div>
 			<div class="flex gap-4 items-center w-[66%] ml-auto pt-2">
-				<div class="group">
+				<button @click="scrollLeft" class="group cursor-pointer" :class="{ 'opacity-50': scroll <= 0 }">
 					<div class="border-2 border-brand-primary rounded-full p-px group-hover:border-brand-yellow">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-brand-primary group-hover:text-brand-yellow">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
 						</svg>
 					</div>
-				</div>
-				<div class="group">
+				</button>
+				<button @click="scrollRight" class="group cursor-pointer" :class="{ 'opacity-50': scroll >= maxScroll }">
 					<div class="border-2 border-brand-primary rounded-full p-px group-hover:border-brand-yellow">
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-brand-primary group-hover:text-brand-yellow">
-						<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-					</svg>
-				</div>
-				</div>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-brand-primary group-hover:text-brand-yellow">
+							<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+						</svg>
+					</div>
+				</button>
 			</div>
 		</div>
 	</div>
