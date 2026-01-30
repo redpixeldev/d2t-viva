@@ -4,10 +4,12 @@
 
 @theme {
 	--font-*: initial;
-	--font-heading: sans-serif;
-	--font-body: sans-serif;
+	--font-heading: minion-pro, sans-serif;
+	--font-body: proxima-nova, sans-serif;
 
-	--color-brand-primary: ;
+	--color-brand-primary: #1c1c2f;
+	--color-brand-gray: #efeff0;
+	--color-brand-yellow:#ecaf3e;
 }
 
 @utility container {
@@ -23,7 +25,15 @@
 }
 
 @utility btn-primary {
-	@apply bg-brand-primary text-white;
+	@apply font-bold text-white hover:text-brand-yellow hover:border-brand-yellow rounded-full border-2 px-2 text-sm border-white;
+}
+
+@utility btn-secondary {
+	@apply font-normal hover:font-bold text-brand-primary text-sm;
+}
+
+@utility btn-tertiary {
+	@apply text-brand-primary hover:text-brand-yellow hover:border-brand-yellow rounded-full border px-2 py-[2px] text-sm border-brand-primary inline-block;
 }
 
 @layer base {
