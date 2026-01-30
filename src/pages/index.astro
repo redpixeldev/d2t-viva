@@ -14,7 +14,7 @@ import Cta from '@components/Cta.astro';
 			<div class="w-5/6 sm:w-[45%] lg:w-[35%] xl:w-[28%]">
 				<h2 class="text-white text-2xl font-bold pb-2">Welkom bij Bouwservice Viva!</h2>
 				<p class="text-sm text-white pb-3">Zowel in onze aannemerij voor vloeren en droogbouw als in onze gloednieuwe showroom en bouwmaterialenhandel zorgt ViVa Bouwservice voor rust en comfort in het bouwproces, op maat van wat jij nodig hebt.</p>
-				<a href="/" class="btn btn-primary inline-block">Meer over ons</a>
+				<a href="/about" class="btn btn-primary inline-block">Meer over ons</a>
 			</div>
 		</div>
 	</div>
@@ -48,7 +48,7 @@ import Cta from '@components/Cta.astro';
 	</div>
 	<div class="max-w-7xl mx-auto mb-10">
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group">
+			<a href="/materials" class="relative min-h-80 xl:min-h-100 flex items-end group">
 				<img src="/img/bg-building-materials.webp" class="absolute inset-0 w-full h-full object-cover" alt="">
 				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
 				<div class="relative z-20 w-full">
@@ -63,7 +63,7 @@ import Cta from '@components/Cta.astro';
 					</div>
 				</div>
 			</a>
-			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group">
+			<a href="/materials" class="relative min-h-80 xl:min-h-100 flex items-end group">
 				<img src="/img/bg-flooring-contractors.jpg" class="absolute inset-0 w-full h-full object-cover" alt="">
 				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
 				<div class="relative z-20 w-full">
@@ -78,7 +78,7 @@ import Cta from '@components/Cta.astro';
 					</div>
 				</div>
 			</a>
-			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group">
+			<a href="/materials" class="relative min-h-80 xl:min-h-100 flex items-end group">
 				<img src="/img/bg-dry-construction-contract.webp" class="absolute inset-0 w-full h-full object-cover" alt="">
 				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
 				<div class="relative z-20 w-full">
@@ -104,7 +104,7 @@ import Cta from '@components/Cta.astro';
 					<h2 class="pb-5 text-2xl font-bold">Jouw expert in bouwmaterialen</h2>
 					<p class="pb-3 text-sm">Bouwmaterialen Germain Vinckier nv is na meer dan 70 jaar een gevestigde waarde in de bouwsector. Onze focus ligt op prijs-kwaliteit, flexibiliteit, een snelle levering en een persoonlijke aanpak.</p>
 					<p class="text-sm pb-4">Met onze verschillende, gespecialiseerde afdelingen in zowel ruwbouw als afwerking maken wij uw bouwdromen werkelijkheid. Als familiebedrijf. Als vakmensen. Maar ook als smaakmakers. Met een bijzondere passie voor ons vak.</p>
-					<a href="/" class="btn btn-tertiary">Contacteer ons</a>
+					<a href="/contact" class="btn btn-tertiary">Contacteer ons</a>
 				</div>
 			</div>
 		</div>
@@ -129,7 +129,7 @@ import Cta from '@components/Cta.astro';
 					<h2 class="pb-5 text-2xl font-bold">Een uitnodigende showroom</h2>
 					<p class="pb-3 text-sm">Uitgebreide tekst over de showroom con corem quisit ad ex ellabore latiam cor atestem expe volorerundae exeriae debit perovit faceper ecerspici diorumquas sae nonsequis volestiis aut quam qui con cum arcimus apiduntion eos destium sequi dolore</p>
 					<p class="text-sm pb-4">m porita sus imusdam voluptus, ut lat es vel magnatum re sequatume dolor ratiaerfero vene commolo maximustis eum utem fugia velecta simuste omnitat uribustionem rehenis quis enia qui offictem.</p>
-					<a href="/" class="btn btn-tertiary">Contacteer ons</a>
+					<a href="/contact" class="btn btn-tertiary">Contacteer ons</a>
 				</div>
 			</div>
 		</div>
@@ -186,46 +186,46 @@ import Cta from '@components/Cta.astro';
 			@scroll="updateScroll"
 			class="overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-hide px-4 lg:px-0"
 		>
-			<a href="/" class="relative min-h-80 xl:min-h-100 group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] mr-8 whitespace-normal">
+			<div class="relative min-h-80 xl:min-h-100 group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] mr-8 whitespace-normal">
 				<img src="/img/references-1.jpg" class="absolute inset-0 w-full h-full object-cover" alt="">
 				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
 				<div class="relative z-20 w-full min-h-80 xl:min-h-100 flex items-end">
 					<div class="p-5 text-white w-full">
-						<h2 class="text-xl/[24px] xl:text-2xl font-bold group-hover:text-brand-yellow btn">K in Kortrijk </h2>
+						<h2 class="text-xl/[24px] xl:text-2xl font-bold">K in Kortrijk </h2>
 						<p class="text-sm">Korte beschrijving over de dienst ter plaatse.</p>
 					</div>
 				</div>
-			</a>
-			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] mr-8 whitespace-normal">
+			</div>
+			<div class="relative min-h-80 xl:min-h-100 flex items-end group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] mr-8 whitespace-normal">
 				<img src="/img/references-2.jpg" class="absolute inset-0 w-full h-full object-cover" alt="">
 				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
 				<div class="relative z-20 w-full min-h-80 xl:min-h-100 flex items-end">
 					<div class="p-5 text-white w-full">
-						<h2 class="text-xl/[24px] xl:text-2xl font-bold group-hover:text-brand-yellow btn">Caendel, Deinze</h2>
+						<h2 class="text-xl/[24px] xl:text-2xl font-bold">Caendel, Deinze</h2>
 						<p class="text-sm">Korte beschrijving over de dienst ter plaatse.</p>
 					</div>
 				</div>
-			</a>
-			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] mr-8 whitespace-normal">
+			</div>
+			<div class="relative min-h-80 xl:min-h-100 flex items-end group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] mr-8 whitespace-normal">
 				<img src="/img/references-3.jpg" class="absolute inset-0 w-full h-full object-cover" alt="">
 				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
 				<div class="relative z-20 w-full min-h-80 xl:min-h-100 flex items-end">
 					<div class="p-5 text-white w-full">
-						<h2 class="text-xl/[24px] xl:text-2xl font-bold group-hover:text-brand-yellow btn">Plopsaqua, Hannut-Landen</h2>
+						<h2 class="text-xl/[24px] xl:text-2xl font-bold">Plopsaqua, Hannut-Landen</h2>
 						<p class="text-sm">Korte beschrijving over de dienst ter plaatse.</p>
 					</div>
 				</div>
-			</a>
-			<a href="/" class="relative min-h-80 xl:min-h-100 flex items-end group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] whitespace-normal">
+			</div>
+			<div class="relative min-h-80 xl:min-h-100 flex items-end group inline-block w-[85%] sm:w-[45%] lg:w-[calc(33.333%-1.33rem)] whitespace-normal">
 				<img src="/img/references-3.jpg" class="absolute inset-0 w-full h-full object-cover" alt="">
 				<div class="absolute bottom-0 inset-x-0 z-10 h-2/3 xl:h-2/5 bg-linear-to-t from-brand-primary/80"></div>
 				<div class="relative z-20 w-full min-h-80 xl:min-h-100 flex items-end">
 					<div class="p-5 text-white w-full">
-						<h2 class="text-xl/[24px] xl:text-2xl font-bold group-hover:text-brand-yellow btn">Plopsaqua, Hannut-Landen</h2>
+						<h2 class="text-xl/[24px] xl:text-2xl font-bold">Plopsaqua, Hannut-Landen</h2>
 						<p class="text-sm">Korte beschrijving over de dienst ter plaatse.</p>
 					</div>
 				</div>
-			</a>
+			</div>
 		</div>
 		<div class="pt-8">
 			<div class="relative w-[66%] ml-auto h-[2px] bg-brand-primary/30">
